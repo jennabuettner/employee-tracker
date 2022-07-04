@@ -8,7 +8,7 @@ const PORT = process.env.PORT || 3001;
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
-const dbConnect = sql.createConnection(
+const dbConnection = sql.createConnection(
   {
     host: "localhost",
     user: DB_USER,
@@ -18,4 +18,4 @@ const dbConnect = sql.createConnection(
   console.log("Connection to database has been established.")
 );
 
-module.exports = dbConnect;
+module.exports = dbConnection;
