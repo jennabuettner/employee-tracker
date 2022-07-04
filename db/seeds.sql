@@ -30,4 +30,4 @@ VALUES
 ('Tobias', 'Henderson', 7, NULL)
 ('Brock', 'Ovana', 8, 7)
 ('Rue', 'Hadley', 9, NULL)
-('Yu', 'Da', 10, 9)
+('Yoh', 'Da', 10, 9)
