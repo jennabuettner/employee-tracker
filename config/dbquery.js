@@ -1,15 +1,15 @@
 const db = require('./connection');
-const dbConnection = require('../server');
+const dbConnection = require('..');
 const allTables = ('console.table');
 
-addEmployee(employee) {
+export function addEmployee(employee) {
     const sql = `INSERT INTO employees(firstname, lastname, role) VALUES (?, ?, ?);`;
     db.query(sql, (params), (err,data) => {
         console.log(table)
     })
 }
 
-function displayDept() {
+export function displayDept() {
     const sql = `SELECT * FROM department`;
     db.query(sql, (params), (err,data) => {
         if (err) {
@@ -25,20 +25,9 @@ function displayDept() {
 }
 
 
-function displayEmployees() {
-    const sql = `SELECT employee.id, 
-    employee.first_name AS First, employee.last_name AS Last, 
-    role.title AS Title, 
-    role.salary AS Salary, 
-    department.name AS Department, 
-    CONCAT(manager.first_name, '', manager.last_name) AS Manager 
-    FROM employee employee 
-    LEFT JOIN employee manager 
-    ON employee.manager_id = manager.id, 
-    JOIN department 
-    ON role.department_id = department.id, 
-    JOIN role ON employee.role_id = role.id;`;
-    db.query(sql, (params), (err,data) => {
+export function displayEmployees() {
+    const sql = `SELECT * FROM employees`;
+    db.query(sql,  (err,data) => {
         if (err) {
             console.error(err);
         } else {
