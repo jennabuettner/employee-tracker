@@ -3,7 +3,7 @@ const inquirer = require("inquirer");
 const {
   displayEmployees,
   addEmployee,
-  displayDept,
+  displayDepts,
 } = require("./config/dbquery");
 
 function init() {
@@ -66,15 +66,60 @@ function loadQuestions() {
     .then(({ choice }) => {
       switch (choice) {
         case choices[0]:
-          displayDepartments();
+          displayDepts();
         console.log(choices[0]);
             break;
+
+        case choices[1]:
+          displayRoles();
+          console.log(choices[1]);
+            break;
+
+        case choices[2]:
+          displayEmployees();
+          console.log(choices[2]);
+            break;
+
+        case choices[3]:
+          addDept();
+          console.log(choices[3]);
+            break;
+
+        case choices[5]:
+          addRole();
+          console.log(choices[5]);
+            break;
+
+        case choices[6]:
+          addEmployee();
+          console.log(choices[6]);
+            break;
+
+        case choices[7]:
+          updateEmployee();
+          console.log(choices[7]);
+            break;
+
+          case choices[8]:
+          exit();
+          console.log('Thanks!');
+            break;
+   
+  
+
         // case 
 
         // default:
         //   break;
       }
     });
+    // .prompt([
+    //   {
+    //     type: "list",
+    //     name: "choice",
+    //     message: Who 
+    //   }
+    // ])
 }
 
 init();
