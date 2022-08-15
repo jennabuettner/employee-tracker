@@ -1,10 +1,12 @@
-const { Separator } = require("inquirer");
 const inquirer = require("inquirer");
-const {
-  displayEmployees,
-  addEmployee,
-  displayDepts,
-} = require("./config/dbquery");
+
+
+// write function for each choice's function.
+// const {
+//   displayEmployees
+//   addEmployee,
+//   displayDepts,
+// }
 
 function init() {
   loadQuestions();
@@ -85,41 +87,27 @@ function loadQuestions() {
           console.log(choices[3]);
             break;
 
-        case choices[5]:
+        case choices[4]:
           addRole();
+          console.log(choices[4]);
+            break;
+
+        case choices[5]:
+          addEmployee();
           console.log(choices[5]);
             break;
 
         case choices[6]:
-          addEmployee();
+          updateEmployee();
           console.log(choices[6]);
             break;
 
-        case choices[7]:
-          updateEmployee();
-          console.log(choices[7]);
-            break;
-
-          case choices[8]:
+          case choices[7]:
           exit();
           console.log('Thanks!');
             break;
-   
-  
-
-        // case 
-
-        // default:
-        //   break;
       }
     });
-    // .prompt([
-    //   {
-    //     type: "list",
-    //     name: "choice",
-    //     message: Who 
-    //   }
-    // ])
 }
 
 init();
